@@ -1,34 +1,138 @@
-
 #ifndef arrayQeue_h
 #define arrayQeue_h
 #include "queue.h"
 #include <iostream>
-
+/*----------------------------------------------------------------
+       ***************** arrayQueue Class *******************
+	This derived class implements the Queue using an array
+	and ovverrides all of the ABC's pure virtual functions.
+	This class is templetad as well and allows us to use
+	to make a queue for any data type that we want.
+*----------------------------------------------------------------*/
 
 template<typename T>
 class arrayQueue : public Queue<T>
 {
 public:
+	/*________________________________________________________________
+		bool isEmptyQueue() const;
+	_________________________________________________________________
+		POST-CONDITIONS:
+		returns a bool telling us if queue is empty
+	_________________________________________________________________*/
 	bool isEmptyQueue() const;
+	
+	/*________________________________________________________________
+		bool isFullQueue() const;
+	_________________________________________________________________
+		POST-CONDITIONS:
+		returns a bool telling us if queue is full
+	_________________________________________________________________*/
 	bool isFullQueue() const;
+	
+	/*________________________________________________________________
+		void emptyQueue();
+	_________________________________________________________________
+		POST-CONDITIONS:
+		the queue is emptied and font/back are reset to zero
+	_________________________________________________________________*/
 	void emptyQueue();
+	
+	/*________________________________________________________________
+		T front() const;
+	_________________________________________________________________
+		POST-CONDITIONS:
+		returns a T type of the element at the front fo the queue
+	_________________________________________________________________*/
 	T front() const;
+	
+	/*________________________________________________________________
+		T back() const;
+	_________________________________________________________________
+		POST-CONDITIONS:
+		returns a T type of the element at the back of the queue
+	_________________________________________________________________*/
 	T back() const;
+	
+	/*________________________________________________________________
+		void enQueue(const T& queueElement);
+	_________________________________________________________________
+		PRE-CONDITIONS:
+		a queue without this added element
+	 
+		POST-CONDITIONS:
+		a queue with this new element appended to the back
+	_________________________________________________________________*/
 	void enQueue(const T& queueElement);
+	
+	/*________________________________________________________________
+		void deQueue() ;
+	_________________________________________________________________
+		PRE-CONDITIONS:
+		a queue with the front element still there
+	 
+		POST-CONDITIONS:
+		a queue with this front element taken off
+	_________________________________________________________________*/
 	void deQueue() ;
+	
+	/*________________________________________________________________
+		void printQ();
+	_________________________________________________________________
+		POST-CONDITIONS:
+		prints out the contents of the queue from the front to back
+	_________________________________________________________________*/
 	void printQ();
+	
+	/*________________________________________________________________
+		int getSize();
+	_________________________________________________________________
+		POST-CONDITIONS:
+		returns the size of the queue
+	_________________________________________________________________*/
 	int getSize();
-	arrayQueue(int size);
-	~arrayQueue(){delete qArray;}
+	
+	/*________________________________________________________________
+		arrayQueue(int size);
+	_________________________________________________________________
+		POST-CONDITIONS:
+		creates an arrayQueue object with a max size that is given
+	_________________________________________________________________*/
+	arrayQueue(int size);//alternate constructor
+	
+	/*________________________________________________________________
+		~arrayQueue(){delete qArray;}
+	_________________________________________________________________
+		POST-CONDITIONS:
+		deallocated the memory for the qArray
+	_________________________________________________________________*/
+	~arrayQueue(){delete qArray;}//destructor
+	
+	/*________________________________________________________________
+		arrayQueue(const arrayQueue & otherArray);
+	_________________________________________________________________
+		POST-CONDITIONS:
+		creates a copy of another arrayQueue object including the
+		pointed to data (the array)
+	_________________________________________________________________*/
 	arrayQueue(const arrayQueue & otherArray);//copy constructor
+	
+	/*________________________________________________________________
+		void operator=(const arrayQueue &otherArray);
+	_________________________________________________________________
+		POST-CONDITIONS:
+		assigns the contents of the other array to the object on the
+		left hand side. Using same methods as above copy constructor.
+	_________________________________________________________________*/
 	void operator=(const arrayQueue &otherArray);//overloaded assignment oeprator
 private:
-	int maxSize;
-	int qsize;
-	int qfront;
-	int qback;
-	T* qArray;
+	int maxSize; //the max size of the queue
+	int qsize;   //the current size of queue
+	int qfront;  //the index of the front
+	int qback;   //the index of the back
+	T* qArray;   //the T type pointer that points to array
 };
+
 
 template <typename T>
 arrayQueue<T>::arrayQueue(const arrayQueue &otherArray)//copy constructor

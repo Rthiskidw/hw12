@@ -1,3 +1,9 @@
+/*------------------------------------------------------------
+ * AUTHOR     : Reed Wilson
+ * HW09       : Virtual Functions & Abstract Classes
+ * CLASS      : CS 1C
+ * SECTION    : November 9 2020
+--------------------------------------------------------------*/
 #include <iostream>
 #include "queue.h"
 #include "arrayQueue.h"
@@ -42,9 +48,9 @@ int main(int argc, const char * argv[])
 	}
 	myarrayQInt.printQ();
 	
-	
-	arrayQueue<double> myarrayQIntDouble(10);
 	//testing double queue
+	arrayQueue<double> myarrayQIntDouble(10);
+	
 	cout << "\n*****DOUBLE QUEUE TEST*****" << endl;
 	for(int i = 0; i < 6; i++)
 	{
@@ -70,7 +76,8 @@ int main(int argc, const char * argv[])
 	}
 	myarrayQIntDouble.printQ();
 	
-	//Adding to a full queue
+	
+	//adding to a full queue
 	arrayQueue<char>myQ(5);
 	cout << "\n*****Adding to full queue...*****" << endl;
 	myQ.enQueue('a');
@@ -82,6 +89,7 @@ int main(int argc, const char * argv[])
 	
 	//testing isEmpty and isFull
 	cout << "\n*****Testing isEmpty and isFull*****" << endl;
+	
 	//emptying the queue
 	myQ.deQueue();
 	myQ.deQueue();
@@ -92,7 +100,8 @@ int main(int argc, const char * argv[])
 	if (myQ.isEmptyQueue())
 	{
 		cout << "QUEUE IS EMPTY!" << endl;
-	}else
+	}
+	else
 	{
 		cout << "QUEUE NOT EMPTY!" << endl;
 	}
