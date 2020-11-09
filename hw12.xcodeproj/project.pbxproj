@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8C2EFF9D255726AF0004FD27 /* hw12.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EFF9C255726AF0004FD27 /* hw12.cpp */; };
 		8C2EFFA4255729580004FD27 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EFFA3255729580004FD27 /* makefile */; };
-		8C2EFFA725573E520004FD27 /* queueClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C2EFFA625573E520004FD27 /* queueClass.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +28,6 @@
 		8C2EFF9C255726AF0004FD27 /* hw12.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hw12.cpp; sourceTree = "<group>"; };
 		8C2EFFA3255729580004FD27 /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		8C2EFFA525573E410004FD27 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
-		8C2EFFA625573E520004FD27 /* queueClass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = queueClass.cpp; sourceTree = "<group>"; };
 		8C2EFFAB255742490004FD27 /* arrayQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrayQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,29 +61,12 @@
 		8C2EFF9B255726AF0004FD27 /* hw12 */ = {
 			isa = PBXGroup;
 			children = (
-				8C2EFFAD255742A60004FD27 /* cpp */,
-				8C2EFFAC2557428E0004FD27 /* header */,
+				8C2EFF9C255726AF0004FD27 /* hw12.cpp */,
+				8C2EFFA525573E410004FD27 /* queue.h */,
+				8C2EFFAB255742490004FD27 /* arrayQueue.h */,
 				8C2EFFA3255729580004FD27 /* makefile */,
 			);
 			path = hw12;
-			sourceTree = "<group>";
-		};
-		8C2EFFAC2557428E0004FD27 /* header */ = {
-			isa = PBXGroup;
-			children = (
-				8C2EFFA525573E410004FD27 /* queue.h */,
-				8C2EFFAB255742490004FD27 /* arrayQueue.h */,
-			);
-			path = header;
-			sourceTree = "<group>";
-		};
-		8C2EFFAD255742A60004FD27 /* cpp */ = {
-			isa = PBXGroup;
-			children = (
-				8C2EFF9C255726AF0004FD27 /* hw12.cpp */,
-				8C2EFFA625573E520004FD27 /* queueClass.cpp */,
-			);
-			path = cpp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +128,6 @@
 			files = (
 				8C2EFFA4255729580004FD27 /* makefile in Sources */,
 				8C2EFF9D255726AF0004FD27 /* hw12.cpp in Sources */,
-				8C2EFFA725573E520004FD27 /* queueClass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "queue.h"
 #include "arrayQueue.h"
+
 using namespace std;
 
 int main(int argc, const char * argv[])
@@ -106,7 +107,8 @@ int main(int argc, const char * argv[])
 	if (myQ.isFullQueue())
 	{
 		cout << "QUEUE IS FULL!" << endl;
-	}else
+	}
+	else
 	{
 		cout << "QUEUE NOT FULL!" << endl;
 	}
@@ -115,5 +117,34 @@ int main(int argc, const char * argv[])
 	cout << "\n*****Testing front and back methods*****" << endl;
 	cout << myQ.front() << " is at the front" << endl;
 	cout << myQ.back() << " is at the back" << endl;
+	
+	//testing copy constructor
+	cout << "\n*****Testing copy constructor*****" << endl;
+	arrayQueue<char>yourQ(myQ);
+	cout << "Printing   myQ...";
+	myQ.printQ();
+	cout << "Printing yourQ...";
+	yourQ.printQ();
+	
+	//testing assignment overloaded operator
+	cout << "\n*****Testing assignment overloaded operator*****" << endl;
+	
+	arrayQueue<char>hisQ(10);
+	hisQ.enQueue('r');
+	hisQ.enQueue('r');
+	hisQ.enQueue('r');
+	
+	arrayQueue<char>herQ(10);
+	herQ.enQueue('e');
+	herQ.enQueue('e');
+	
+	herQ.enQueue('e');
+	cout << "Using the '=' operator..." << endl;
+	hisQ = herQ;
+	cout << "Printing hisQ...";
+	hisQ.printQ();
+	cout << "Printing herQ...";
+	herQ.printQ();
+
 	return 0;
 }
